@@ -1,0 +1,261 @@
+body{
+    /*background-image: url("images/background.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;*/
+    background: linear-gradient(rgb(253, 194, 207), rgb(255, 184, 208), rgb(253, 166, 207));
+}
+p, b.topic, h1, h2, h3, h4, h5, h6{
+    text-align: center;
+    display: block;
+}
+#bio{
+    text-align: center;
+    padding-left: 25%;
+    padding-right: 25%;
+    animation: floatGentle 3s  infinite;
+}
+@keyframes floatGentle{
+    0%, 100% { transform: translateY(10px); }
+    50% { transform: translateY(-10px); }
+}
+
+
+audio{
+    position: absolute;
+    right: 12;
+    background-image: url("images/nav-bar.png") important!;
+    width: 300px;
+    border-radius: 30px;
+}
+audio:hover {
+    transform: scale(1.05);
+    transition: all 0.3s;
+    box-shadow: 5px 5px 10px rgba(56, 27, 27, 0.6);
+    }
+.container{
+    max-width: 500px;          /* Limits width, keeps it readable */
+    margin: 0 auto;            /* Centers the container itself */
+    text-align: center;        /* Centers all text inside */
+    padding: 40px 40px;
+}
+.right-align{
+    text-align: right;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.center-align{
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.left-align{
+    text-align: left;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+input, textarea, button {
+    width: 100%;               /* Takes full width of container */
+    max-width: 400px;          /* But not too wide */
+}
+
+.viber-link{
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30;
+    text-decoration: none;
+    text-align: center;
+}
+.viber-link:hover{
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30;
+    color: white;
+    background-color: #b178ef !important;
+    padding-left: 100px;
+    padding-right: 100px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.instagram-link{
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30;
+    text-decoration: none;
+    text-align: center;
+}
+.linkedin-link{
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30;
+    text-decoration: none;
+    text-align: center;
+}
+.github-link{
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30;
+    text-decoration: none;
+    text-align: center;
+}
+
+.instagram-link:hover{
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30;
+    background-color: #ff6ef0 !important;
+    transition: all 0.3s ease;
+    color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+    border-radius: 8px;
+}
+.linkedin-link:hover{
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30;
+    background-color: #2275b9 !important;
+    transition: all 0.3s ease;
+    color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+    border-radius: 8px;
+}
+.github-link:hover{
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30;
+    background-color: #000000 !important;
+    transition: all 0.3s ease;
+    color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+    border-radius: 8px;
+}
+
+#submit{
+    background-image: url('images/nav-bar.png');
+    width: 400px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+    color: white !important;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(56, 32, 32, 0.6);
+}
+#submit:hover {
+    background-color: #aa2222 !important;  
+    transform: scale(1.05);                
+    transition: all 0.3s ease;
+}
+
+#pillNav2{
+    background-image: url('images/nav.png');
+    filter: saturate(2);
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 5px;
+    margin: 0;
+    box-shadow: 5px 5px 10px rgba(56, 32, 32, 0.6);
+}
+.nav-link{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 8px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    display: inline-block;
+}
+.nav-link:hover {
+    background-color: #f04f4f;
+}
+.nav-link.active {
+    background-image: url('images/nav-bar.png');
+    background-size: cover;
+    background-position: center;
+    color: white !important;
+    border-radius: 8px;
+}
+.nav-link.active:hover {
+    transform: scale(1.1); 
+    box-shadow: 5px 5px 10px rgba(66, 32, 32, 0.6);              
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-right{
+    position: absolute;
+    right: 10px;
+    display: flex;
+    align-items: center;          
+}
+
+
+.logo:hover{
+    transition: transform 0.5s ease !important;
+    transform: rotate(360deg) !important;
+}
+
+.imagegrid{
+   text-align: center;
+}
+
+.imagegrid img{
+    border-radius: 15px;
+    padding: 2px;
+    max-height: 350px;
+    max-width: 400px;
+    object-fit: cover;
+    display: inline;
+    transition: transform 0.6s;
+    background-image: url('images/smallbg.png');
+}
+
+.imagegrid img:hover{
+    background-color: #ff6e8b;
+    object-fit: contain;
+    transform: scale(1.05);
+    box-shadow: 5px 5px 10px rgba(55, 32, 32, 0.6);  
+} 
+
+#profilepic{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 5px 10px rgba(56, 32, 32, 0.6);
+
+}
+#profilepic:hover{
+    transition: all transform 1.6s;
+    background-image: url('images/flowerbg.png');
+}
+
+#name, #email{
+    width: 400px;
+    height: 40px;
+    background-image: url('images/nameemail.png');
+    border-color: beige;
+    border: none;
+}
+#message{
+    width: 400px;
+    height: 60px;
+    background-image: url('images/message.png');
+    border-color: beige;
+    border: none;
+}
