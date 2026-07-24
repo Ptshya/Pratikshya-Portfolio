@@ -3,96 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pratikshya Rai — Graphic Design Portfolio showcasing branding, poster design, wedding editing, and more.">
-  <link rel="stylesheet" href="style.css">
-  <title>Portfolio- Pratikshya Rai</title>
+  <meta name="description" content="Pratikshya Rai — Graphic Design Portfolio showcasing branding, poster design, wedding editing, and visual design.">
+  <title>Pratikshya Rai — Graphic Designer</title>
+  
   <link rel="icon" type="image/png" href="small-logo.png">
+  
+  <!-- Modern Typography Options -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oregano:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="nav-pills" id="pillNav2">
-  <div class="nav-item">
-    <a href="index.html" class="nav-link active">Portfolio</a>
-  </div>
-  <div class="nav-item">
-    <a href="about.html" class="nav-link">About</a>
-  </div>
-  <div class="nav-item">
-    <a href="contact.html" class="nav-link">Contact</a>
-  </div>
-  <div class="nav-right">
-    <b>Pratikshya Rai</b>
-    <img src="small-logo.png" alt="Logo" height="60" width="60" class="logo">
-  </div>
-</nav>
+  <!-- Navigation -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" id="pillNav2">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Portfolio</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-brand">
+        <span class="brand-name">Pratikshya Rai</span>
+        <img src="small-logo.png" alt="Pratikshya Rai Logo" class="logo">
+      </div>
+    </nav>
+  </header>
 
-<main>
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="badge">Visual &amp; Graphic Designer</span>
+      <h1 class="hero-title">Crafting memorable identities &amp; visual experiences.</h1>
+    </div>
+  </section>
 
-  <b class="topic">Branding &amp; Identity</b>
-  <div class="imagegrid">
-    <div class="image-card">
-      <img src="908965e9-e97b-481a-a1f0-1f24b6707c7c.png" alt="Branding project 1">
-    </div>
-    <div class="image-card">
-      <img src="b1871dae-04cd-4e9e-a5e8-9d95180942be.png" alt="Branding project 2">
-    </div>
-    <div class="image-card">
-      <img src="1000025632.png" alt="Branding project 3">
-    </div>
-  </div>
+  <!-- Portfolio Content -->
+  <main class="portfolio-container">
 
-  <b class="topic">Cover &amp; Poster Design</b>
-  <div class="imagegrid">
-    <div class="image-card">
-      <img src="5.png" alt="Poster design 1">
-    </div>
-    <div class="image-card">
-      <img src="7.png" alt="Poster design 2">
-    </div>
-    <div class="image-card">
-      <img src="1000026184.jpg" alt="Poster design 3">
-    </div>
-    <div class="image-card">
-      <img src="coverplant.jpg" alt="Poster design 4">
-    </div>
-  </div>
+    <!-- Branding Section -->
+    <section class="portfolio-section">
+      <div class="section-header">
+        <h2 class="topic">Branding &amp; Identity</h2>
+        <span class="section-count">01</span>
+      </div>
+      <div class="imagegrid">
+        <article class="image-card">
+          <img src="908965e9-e97b-481a-a1f0-1f24b6707c7c.png" alt="Branding project 1" loading="lazy">
+          <div class="card-overlay">
+            <span>Brand Identity</span>
+          </div>
+        </article>
+        <article class="image-card">
+          <img src="b1871dae-04cd-4e9e-a5e8-9d95180942be.png" alt="Branding project 2" loading="lazy">
+          <div class="card-overlay">
+            <span>Visual System</span>
+          </div>
+        </article>
+        <article class="image-card">
+          <img src="1000025632.png" alt="Branding project 3" loading="lazy">
+          <div class="card-overlay">
+            <span>Packaging &amp; Identity</span>
+          </div>
+        </article>
+      </div>
+    </section>
 
-  <b class="topic">Wedding &amp; Event Editing</b>
-  <div class="imagegrid">
-    <div class="image-card">
-      <img src="1000029352.png" alt="Wedding editing 1">
-    </div>
-    <div class="image-card">
-      <img src="1000029363.png" alt="Wedding editing 2">
-    </div>
-    <div class="image-card">
-      <img src="viet.png" alt="Wedding editing 3">
-    </div>
-  </div>
+    <!-- Poster Section -->
+    <section class="portfolio-section">
+      <div class="section-header">
+        <h2 class="topic">Cover &amp; Poster Design</h2>
+        <span class="section-count">02</span>
+      </div>
+      <div class="imagegrid">
+        <article class="image-card">
+          <img src="5.png" alt="Poster design 1" loading="lazy">
+          <div class="card-overlay">
+            <span>Poster Series</span>
+          </div>
+        </article>
+        <article class="image-card">
+          <img src="7.png" alt="Poster design 2" loading="lazy">
+          <div class="card-overlay">
+            <span>Editorial Cover</span>
+          </div>
+        </article>
+        <article class="image-card">
+          <img src="1000026184.jpg" alt="Poster design 3" loading="lazy">
+          <div class="card-overlay">
+            <span>Event Poster</span>
+          </div>
+        </article>
+        <article class="image-card">
+          <img src="coverplant.jpg" alt="Poster design 4" loading="lazy">
+          <div class="card-overlay">
+            <span>Plant Series Cover</span>
+          </div>
+        </article>
+      </div>
+    </section>
 
-  <b class="topic">Others</b>
-  <div class="imagegrid">
-    <div class="image-card">
-      <img src="1000029367.png" alt="Other work 1">
-    </div>
-    <div class="image-card">
-      <img src="1000029365.png" alt="Other work 2">
-    </div>
-    <div class="image-card">
-      <img src="1000025530.png" alt="Other work 3">
-    </div>
-    <div class="image-card">
-      <img src="1000025535.png" alt="Other work 4">
-    </div>
-    <div class="image-card">
-      <img src="1000029388.png" alt="Other work 5">
-    </div>
-  </div>
+    <!-- Events Section -->
+    <section class="portfolio-section">
+      <div class="section-header">
+        <h2 class="topic">Wedding &amp; Event Editing</h2>
+        <span class="section-count">03</span>
+      </div>
+      <div class="imagegrid">
+        <article class="image-card">
+          <img src="1000029352.png" alt="Wedding editing 1" loading="lazy">
+          <div class="card-overlay">
+            <span>Event Suite</span>
+          </div>
+        </article>
+        <article class="image-card">
+          <img src="1000029363.png" alt="Wedding editing 2" loading="lazy">
+          <div class="card-overlay">
+            <span>Invitation Design</span>
+          </div>
+        </article>
+        <article class="image-card">
+          <img src="viet.png" alt="Wedding editing 3" loading="lazy">
+          <div class="card-overlay">
+            <span>Photo Retouching</span>
+          </div>
+        </article>
+      </div>
+    </section>
 
-</main>
+    <!-- Other Works Section -->
+    <section class="portfolio-section">
+      <div class="section-header">
+        <h2 class="topic">Other Creative Works</h2>
+        <span class="section-count">04</span>
+      </div>
+      <div class="imagegrid">
+        <article class="image-card">
+          <img src="1000029367.png" alt="Other work 1" loading="lazy">
+          <div class="card-overlay">
+            <span>Visual Exploration</span>
+          </div>
+        </article>
+        <article class="image-card">
+          <img src="1000029365.png" alt="Other work 2" loading="lazy">
+          <div class="card-overlay">
+            <span>Digital Artwork</span>
+          </div>
+        </article>
+        <article class="image-card">
+          <img src="1000025530.png" alt="Other work 3" loading="lazy">
+          <div class="card-overlay">
+            <span>Graphics Project</span>
+          </div>
+        </article>
+        <article class="image-card">
+          <img src="1000025535.png" alt="Other work 4" loading="lazy">
+          <div class="card-overlay">
+            <span>Experimental Design</span>
+          </div>
+        </article>
+        <article class="image-card">
+          <img src="1000029388.png" alt="Other work 5" loading="lazy">
+          <div class="card-overlay">
+            <span>Illustration Work</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="footer">
+    <p>© 2026 Pratikshya Rai. Built with precision &amp; creativity.</p>
+  </footer>
 
 </body>
 </html>
