@@ -92,7 +92,7 @@ b.topic::after {
 }
 
 .nav-link.active {
-    background-image: url('images/nav-bar.png');
+    background-color: red;
     background-size: cover;
     background-position: center;
     color: white !important;
@@ -174,7 +174,6 @@ b.topic::after {
 
 #profilepic:hover {
     transform: scale(1.05);
-    background-image: url('images/flowerbg.png');
 }
 
 /* ===== Audio Player ===== */
