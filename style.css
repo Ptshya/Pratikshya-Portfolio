@@ -1,382 +1,267 @@
-/* ===== Base & Reset ===== */
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ==========================================================================
+   Design Tokens & CSS Variables
+   ========================================================================== */
+:root {
+  --bg-primary: #0a0b0e;
+  --bg-surface: #12141a;
+  --bg-glass: rgba(18, 20, 26, 0.75);
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --accent-color: #6366f1;
+  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  --border-light: rgba(255, 255, 255, 0.08);
+  --font-heading: 'Syne', sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-full: 9999px;
+  --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: "Oregano", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 30px;
-    background: linear-gradient(135deg, #fdc2cf 0%, #ffb8d0 40%, #fda6cf 100%);
-    min-height: 100vh;
-    overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ===== Typography ===== */
-p, b.topic, h1, h2, h3, h4, h5, h6 {
-    text-align: center;
-    display: block;
+/* ==========================================================================
+   Navigation (Floating Glassmorphic Pill)
+   ========================================================================== */
+.navbar-wrapper {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
 }
 
-b.topic {
-    display: block;
-    text-align: center;
-    font-size: 2rem;
-    margin-top: 60px;
-    margin-bottom: 10px;
-    color: #4a1942;
-    letter-spacing: 1px;
-    position: relative;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 900px;
+  padding: 8px 12px 8px 16px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-b.topic::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #e0457b, #f7a1c4);
-    margin: 8px auto 0 auto;
-    border-radius: 2px;
-}
-
-/* ===== Bio (about page) ===== */
-#bio {
-    text-align: center;
-    padding-left: 25%;
-    padding-right: 25%;
-    animation: floatGentle 3s infinite;
-}
-
-@keyframes floatGentle {
-    0%, 100% { transform: translateY(10px); }
-    50%      { transform: translateY(-10px); }
-}
-
-/* ===== Navigation ===== */
-#pillNav2 {
-    background-image: url('images/nav.png');
-    background-size: cover;
-    background-position: center;
-    filter: saturate(2);
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 10px 16px;
-    gap: 5px;
-    margin: 0;
-    box-shadow: 0 4px 15px rgba(56, 32, 32, 0.35);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.nav-item {
-    flex-shrink: 0;
+.nav-links {
+  display: flex;
+  gap: 8px;
 }
 
 .nav-link {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    border-radius: 8px;
-    padding: 10px 40px;
-    text-align: center;
-    display: inline-block;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  transition: all 0.3s ease;
 }
 
 .nav-link:hover {
-    background-color: #f04f4f;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .nav-link.active {
-    background-color: red;
-    background-size: cover;
-    background-position: center;
-    color: white !important;
-    border-radius: 8px;
+  color: #fff;
+  background: var(--accent-gradient);
 }
 
-.nav-link.active:hover {
-    transform: scale(1.1);
-    box-shadow: 5px 5px 10px rgba(66, 32, 32, 0.6);
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 10;
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.nav-right {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
+.brand-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
 }
 
 .logo {
-    border-radius: 50%;
-    transition: transform 0.5s ease;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border-light);
 }
 
-.logo:hover {
-    transform: rotate(360deg);
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+  padding: 160px 24px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* ===== Image Grid ===== */
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: #818cf8;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  max-width: 850px;
+  background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   Portfolio Sections & Grid
+   ========================================================================== */
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 12px;
+}
+
+.topic {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.section-count {
+  font-family: var(--font-heading);
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 .imagegrid {
-    width: 90%;
-    max-width: 1400px;
-    margin: 20px auto 50px auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
 }
 
+/* Card Styling */
 .image-card {
-    border-radius: 14px;
-    overflow: hidden;
-    aspect-ratio: 4 / 3;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(6px);
-    box-shadow: 0 4px 20px rgba(80, 20, 60, 0.15);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.image-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(80, 20, 60, 0.3);
+  position: relative;
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
 }
 
 .image-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    transition: transform 0.8s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--transition-smooth);
+  display: block;
 }
 
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 11, 14, 0.8) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card-overlay span {
+  font-weight: 600;
+  font-size: 0.95rem;
+  transform: translateY(10px);
+  transition: transform 0.4s var(--transition-smooth);
+}
+
+/* Hover Effects */
 .image-card:hover img {
-    transform: scale(1.15);
+  transform: scale(1.06);
 }
 
-/* ===== Profile Picture (about page) ===== */
-#profilepic {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 5px 5px 10px rgba(56, 32, 32, 0.6);
-    border-radius: 50%;
-    transition: transform 1.6s ease;
+.image-card:hover .card-overlay {
+  opacity: 1;
 }
 
-#profilepic:hover {
-    transform: scale(1.05);
+.image-card:hover .card-overlay span {
+  transform: translateY(0);
 }
 
-/* ===== Audio Player ===== */
-audio {
-    position: absolute;
-    right: 12px;
-    background-image: url("images/nav-bar.png") !important;
-    width: 300px;
-    border-radius: 30px;
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 1px solid var(--border-light);
+  color: var(--text-muted);
+  font-size: 0.875rem;
 }
 
-audio:hover {
-    transform: scale(1.05);
-    transition: all 0.3s;
-    box-shadow: 5px 5px 10px rgba(56, 27, 27, 0.6);
-}
-
-/* ===== Container (contact page) ===== */
-.container {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 40px 40px;
-}
-
-/* ===== Alignment Helpers ===== */
-.right-align {
-    text-align: right;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-
-.center-align {
-    text-align: center;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-
-.left-align {
-    text-align: left;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-
-/* ===== Form Elements ===== */
-input, textarea, button {
-    width: 100%;
-    max-width: 400px;
-}
-
-#name, #email {
-    width: 400px;
-    height: 40px;
-    background-image: url('images/nameemail.png');
-    border: none;
-    border-radius: 6px;
-}
-
-#message {
-    width: 400px;
-    height: 60px;
-    background-image: url('images/message.png');
-    border: none;
-    border-radius: 6px;
-}
-
-#submit {
-    background-image: url('images/nav-bar.png');
-    width: 400px;
-    height: 40px;
-    background-size: cover;
-    background-position: center;
-    color: white !important;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 5px 5px 10px rgba(56, 32, 32, 0.6);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#submit:hover {
-    background-color: #aa2222 !important;
-    transform: scale(1.05);
-}
-
-/* ===== Social Links ===== */
-.viber-link,
-.instagram-link,
-.linkedin-link,
-.github-link {
-    font-family: "Indie Flower", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 30px;
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.viber-link:hover {
-    color: white;
-    background-color: #b178ef !important;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-.instagram-link:hover {
-    color: white;
-    background-color: #ff6ef0 !important;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-.linkedin-link:hover {
-    color: white;
-    background-color: #2275b9 !important;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-.github-link:hover {
-    color: white;
-    background-color: #000000 !important;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-/* ===== Responsive Breakpoints ===== */
-
-/* Tablets */
-@media (max-width: 900px) {
-    .imagegrid {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        gap: 16px;
-        width: 94%;
-    }
-
-    .nav-link {
-        padding: 8px 20px;
-    }
-
-    b.topic {
-        font-size: 1.6rem;
-    }
-
-    #bio {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
-}
-
-/* Phones */
-@media (max-width: 560px) {
-    body {
-        font-size: 22px;
-    }
-
-    #pillNav2 {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
-    }
-
-    .nav-right {
-        margin-left: 0;
-        margin-top: 8px;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .nav-link {
-        padding: 8px 16px;
-        font-size: 0.9em;
-    }
-
-    .imagegrid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-        width: 92%;
-    }
-
-    b.topic {
-        font-size: 1.3rem;
-        margin-top: 40px;
-    }
-
-    #bio {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    .viber-link:hover,
-    .instagram-link:hover,
-    .linkedin-link:hover,
-    .github-link:hover {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    #name, #email, #message, #submit {
-        width: 100%;
-    }
+/* Mobile Adjustments */
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .imagegrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .navbar {
+    padding: 6px 10px;
+  }
+  
+  .nav-link {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
 }
